@@ -33,6 +33,9 @@ public class CatalogPanel extends BasePanel {
             new Object[]{"ID", "Тип", "Название", "Расстояние, св. лет",
                 "Масса, кг", "Дата открытия"}, 0) {
             @Override public boolean isCellEditable(int row, int col) { return false; }
+            @Override public Class<?> getColumnClass(int col) {
+                return col == 0 ? Long.class : String.class;
+            }
         };
         table = new JTable(tableModel);
         table.setRowHeight(26);
